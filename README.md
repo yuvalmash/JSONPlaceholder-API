@@ -20,11 +20,10 @@ This repository contains a simple React web application that interacts with the 
 
 To get a local copy of the project up and running, follow these steps:
 
-1. **Clone the Repository**
+1. **Clone the Repository**: git clone https://github.com/yuvalmash/JSONPlaceholder-API.git
 2. **Navigate to the Project Directory**
-3. **Install Dependencies**
-4. **Run the Development Server**
-5. **Access the Application**
+3. **Install Dependencies**: npm i
+4. **Run the Development Server**: npm start
 
 The application should run on [http://localhost:3000](http://localhost:3000).
 
