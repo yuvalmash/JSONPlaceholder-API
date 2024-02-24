@@ -1,46 +1,74 @@
-# Getting Started with Create React App
+# JSONPlaceholder Web App 🌐
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository contains a simple React web application that interacts with the JSONPlaceholder API to display posts and their comments.
 
-## Available Scripts
+## Features ✨
 
-In the project directory, you can run:
+- **Post Listing**: Displays a list of posts fetched from JSONPlaceholder API.
+- **Pagination**: Allows users to navigate through different pages of posts.
+- **Post Selection**: Enables users to select posts for further actions.
+- **Comment Count**: Shows the number of comments on each post.
+- **Refresh Functionality**: Allows users to refresh selected posts and update the comment count.
 
-### `npm start`
+## Technologies Used 🛠️
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React
+- TypeScript
+- CSS
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Getting Started 🚀
 
-### `npm test`
+To get a local copy of the project up and running, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Clone the Repository**
+2. **Navigate to the Project Directory**
+3. **Install Dependencies**
+4. **Run the Development Server**
+5. **Access the Application**
 
-### `npm run build`
+The application should run on [http://localhost:3000](http://localhost:3000).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## File Structure 📂
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **`src/components`**: Contains React components used in the application.
+- `header`: Header component for the application.
+- `tableOfPosts`: Component responsible for rendering the list of posts.
+- `post`: Component representing individual posts.
+- `loader`: Loader component for indicating loading states.
+- `errorPage`: Component for displaying error messages.
+- **`src/App.tsx`**: Main application component containing the logic for fetching posts and managing state.
+- **`src/appStyle.css`**: CSS file for styling the main application layout.
+- **`src/index.tsx`**: Entry point of the application.
+- **`public/index.html`**: HTML template for the application.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Contributing 🤝
 
-### `npm run eject`
+Contributions are welcome! If you find any issues or have suggestions for improvements, please feel free to open an issue or submit a pull request.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Assumptions made during the mission 🤔
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- The site's design requirements were very basic, so I saw no need for external libraries like MUI or Styled-components.
+- The app's functionality can always be further improved, but I thought it best to keep it simple.
+- It was necessary to stick to the given design, but it is okay to change a little according to personal preference.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Functionality added 🏗️
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Initial loader (when posts are first loading).
+- Posts loader (when selected posts are refreshing).
+- Next and previous posts buttons.
+- Deploy to Netlify
 
-## Learn More
+## Style added 💫
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- loader style
+- buttons styles (display, count etc)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Things that can still be improved 🛠
+
+- Added a cache function that saves the posts and does not ask for them every time again if it is not necessary (useMemo).
+- Maybe implement a real infinity scroller.
+- More requests and thoughts are welcome :)
+
+## Credits 🙏
+
+This project was created by Yuval Mashraki. It utilizes the JSONPlaceholder API for fetching data.
