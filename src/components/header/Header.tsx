@@ -1,11 +1,12 @@
-import { PostType } from "../../App";
+import { PostsObj } from "../../types";
+import Button from "../button/Button";
 import "./headerStyle.css";
 
 type HeaderProps = {
   pageStart: number;
   setPageStart: (pageStart: number) => void;
   selectedPostsIds: number[];
-  listOfPosts: PostType[];
+  listOfPosts: PostsObj;
   handleRefreshPosts: () => void;
 };
 
@@ -22,7 +23,8 @@ export default function Header({
         <div className="line-container">
           <h2>My Posts Monitor</h2>
           <div className="chip">
-            {selectedPostsIds.length} of {listOfPosts.length} posts selected
+            {selectedPostsIds.length} of {Object.values(listOfPosts).length}{" "}
+            posts selected
           </div>
         </div>
         <div className="line-container">
@@ -34,28 +36,22 @@ export default function Header({
         </div>
       </div>
       <div className="btns-container">
-        <button
-          className="btn"
+        <Button
           disabled={pageStart <= 0 ?? false}
           onClick={() => setPageStart(pageStart - 15)}
-        >
-          Get previous 15 posts
-        </button>
+          text={"Get previous 15 posts"}
+        />
         <br />
-        <button
-          className="btn"
+        <Button
           disabled={pageStart >= 90 ?? false}
           onClick={() => setPageStart(pageStart + 15)}
-        >
-          Get next {pageStart === 75 ? "10" : "15"} posts
-        </button>
-        <button
-          className="btn"
+          text={`Get next ${pageStart === 75 ? "10" : "15"} posts`}
+        />
+        <Button
           disabled={selectedPostsIds.length > 0 ? false : true}
-          onClick={() => handleRefreshPosts()}
-        >
-          Refresh
-        </button>
+          onClick={() => handleRefreshPosts()} 
+          text={"Refresh"}
+        />
       </div>
     </div>
   );

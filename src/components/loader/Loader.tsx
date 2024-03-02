@@ -1,16 +1,14 @@
 import "./loader.css";
 type LoaderProps = {
-  typeOfLoader: "main" | "post";
+  typeOfLoader?: "main";
 };
 export default function Loader({ typeOfLoader }: LoaderProps) {
   const style: object = findLoaderSize(typeOfLoader);
 
-  function findLoaderSize(typeOfLoader: string): object {
+  function findLoaderSize(typeOfLoader: string | undefined): object {
     switch (typeOfLoader) {
       case "main":
         return { width: "320px", height: "320px" };
-      case "post":
-        return { width: "10px", height: "10px" };
       default:
         return { width: "10px", height: "10px" };
     }

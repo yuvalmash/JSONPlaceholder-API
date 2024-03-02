@@ -1,7 +1,7 @@
-import { ChangeEvent, Dispatch, SetStateAction } from "react";
-import { PostType } from "../../App";
 import "./postStyle.css";
 import Loader from "../loader/Loader";
+import { PostType } from "../../types";
+import { ChangeEvent, Dispatch, SetStateAction } from "react";
 
 type PostProps = {
   post: PostType;
@@ -33,12 +33,12 @@ export default function Post({
   return (
     <div className="post">
       {activePostLoader ? (
-        <Loader typeOfLoader="post" />
+        <Loader />
       ) : (
         <div className="inner-container">
           <div className="title-and-comments-container">
-            <div className="title">{post.title}</div>
-            <div className="comments">{post.numberOfComments} comments</div>
+            <div className="title">{post?.title}</div>
+            <div className="comments">{post?.numberOfComments} comments</div>
           </div>
           <div
             className="checkbox-wrapper"
@@ -48,10 +48,10 @@ export default function Post({
           >
             <label className="checkbox">
               <input
-                className="checkbox__trigger visuallyhidden"
+                className="checkbox-trigger visuallyhidden"
                 type="checkbox"
               />
-              <span className="checkbox__symbol">
+              <span className="checkbox-symbol">
                 <svg
                   aria-hidden="true"
                   className="icon-checkbox"

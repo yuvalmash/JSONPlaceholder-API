@@ -1,15 +1,10 @@
 import { Dispatch, SetStateAction } from "react";
-import { PostType } from "../../App";
+import { PostType, PostsObj } from "../../types";
 import Post from "../post/Post";
 import "./tableOfPostsStyles.css";
 
 type TableOfPostsType = {
-  listOfPosts: {
-    userId: number;
-    id: number;
-    title: string;
-    body: string;
-  }[];
+  listOfPosts: PostsObj;
   setSelectedPostsIds: Dispatch<SetStateAction<number[]>>;
   selectedPostsIds: number[];
   activePostsLoaders: boolean;
@@ -23,7 +18,7 @@ export default function TableOfPosts({
 }: TableOfPostsType) {
   return (
     <div className="table-container">
-      {listOfPosts.map((post: PostType) => {
+      {Object.values(listOfPosts).map((post: PostType) => {
         const activePostLoader =
           selectedPostsIds.includes(post.id) && activePostsLoaders;
         return (
