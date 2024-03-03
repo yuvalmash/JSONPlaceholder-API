@@ -19,7 +19,7 @@ function App() {
   const abortControllerPostsRef = useRef<AbortController | null>(null);
 
   useEffect(() => {
-    async function getPosts111() {
+    async function getPosts() {
       abortControllerPostsRef?.current?.abort();
       abortControllerPostsRef.current = new AbortController();
       setLoading(true);
@@ -39,7 +39,7 @@ function App() {
         setLoading(false);
       }
     }
-    getPosts111();
+    getPosts();
   }, [pageStart]);
 
   async function handleRefreshPosts() {
