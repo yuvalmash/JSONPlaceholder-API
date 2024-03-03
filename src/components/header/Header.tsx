@@ -48,8 +48,8 @@ export default function Header({
           text={`Get next ${pageStart === 75 ? "10" : "15"} posts`}
         />
         <Button
-          disabled={selectedPostsIds.length > 0 ? false : true}
-          onClick={() => handleRefreshPosts()} 
+          disabled={!(selectedPostsIds.length > 0)}
+          onClick={() => handleRefreshPosts()}
           text={"Refresh"}
         />
       </div>
